@@ -35,8 +35,9 @@ export class CoffeeMachine {
     if (loyaltyCard && this.orderCount % 5 === 0 && drink.size !== "large") {
       cost = 0;
     }
-
-    if (cost <= 0) {
+    cost = Math.floor(cost*100)/100
+    
+    if (cost < 0) {
       return "Error: invalid price";
     }
 
